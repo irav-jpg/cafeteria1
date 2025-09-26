@@ -1,23 +1,24 @@
 package fca.cafeteria.data;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
-@Table(name="TipoBebida")
+@Table(name="ttipobebida")
 
 public class TipoBebida {
     @Id
-    @Column(name="idTipoBebida")
-    private int idTipoBebida;
+    @Column(name="id")
+    private int id;
     @Setter
     @Getter
     @Column(name="descripcion")
     private String descripcion;
 
+    @OneToMany(mappedBy = "tipoBebida")
+    private List<Bebida> bebidas;
 
 }

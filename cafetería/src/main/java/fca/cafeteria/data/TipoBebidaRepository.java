@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-public interface BebidaRepository extends JpaRepository<Bebida, Integer> {
-    Optional<Bebida> findByNombre(String nombre);
+public interface TipoBebidaRepository extends JpaRepository<TipoBebida, Integer> {
+    <T> Optional<TipoBebida> findByDescripcion(String descripcion);
 }
-

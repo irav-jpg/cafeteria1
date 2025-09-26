@@ -1,19 +1,16 @@
 package fca.cafeteria.data;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="Bebida")
+@Table(name="tbebida")
 
 public class Bebida {
     @Id
-    @Column(name="idBebida")
-    private int idBebida;
+    @Column(name="id")
+    private int id;
     @Setter
     @Getter
     @Column(name="nombre")
@@ -22,6 +19,11 @@ public class Bebida {
     @Getter
     @Column(name="descripcion")
     private String descripcion;
+
+    @Setter
+    @ManyToOne
+    @JoinColumn(name = "idtipobebida")
+    private TipoBebida tipoBebida;
 
 
 }
