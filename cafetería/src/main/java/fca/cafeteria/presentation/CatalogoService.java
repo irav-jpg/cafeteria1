@@ -28,8 +28,8 @@ public class CatalogoService {
 
         try {
             String nombreBebida = datos.getNombre();
-            String tipoBebida = datos.getTipo();
             String descripcionBebida = datos.getDescripcion();
+            String tipoBebida = datos.getTipo();
             Bebida bebida = bebidadomain.agregarBebida(nombreBebida, tipoBebida, descripcionBebida);
             return ResponseEntity.status(HttpStatus.CREATED).body(bebida);
             //Llama a domain para agregar la bebida, pasando los datos del CatalogoController. Si no existe la bebida la crea
