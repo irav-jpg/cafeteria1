@@ -19,7 +19,7 @@ public class CatalogoRepository implements BebidaService {
     //Se inyectan los repositorios para acceder a la base de datos
 
     @Override
-    public Bebida agregarBebida(String nombre, String descripcion, String tipo) {
+    public Bebida agregarBebida(String nombre, String tipo, String descripcion) {
         //Se sobreescibe el metodo definido en BebidaService
 
         Optional<Bebida> bebidaExistente = bebidaRepository.findByNombre(nombre);
